@@ -72,8 +72,8 @@ a {
     }
 }
 
-/* .skill-progress 아래에 보면 h1이 껴있음. 기존대로 nth-child를 썼다면
-    해당코드는 h1을 nth-child(1)으로 읽어서 한 칸씩 밀리게 됨.
+/* .skill-progress 아래에 보면 h1이 껴있음. 기존대로 nth-child를 썼다면,
+    해당코드는 h1을 nth-child(1)으로 읽어서 한 칸씩 밀리게 됨
     고로, nth-of-type을 사용하여 '나 .item 클래스 내에 있는 .progress-level만 고르는거야' 라는 걸 구분시켜주어야 함 */
 .skill-progress .item:nth-of-type() .progress-level {
     animation-delay: 0s;
