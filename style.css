@@ -57,16 +57,40 @@ a {
     border-radius: 3px;
 }
 
-/* linear-gradient(방향, 시작색깔, 종료색깔) */
+/* linear-gradient(direction, start color, end color) */
 .progress-level {
     height: 10px;
     background: linear-gradient(to right, crimson, gold);
-    animation-name: ani;
-    animation-duration: 1s;
+    animation: ani 1s;
+    animation-fill-mode: both;
 }
 
+/* ani는 temporary name as if class name */
 @keyframes ani {
     0% {
         width: 0;
     }
+}
+
+/* .skill-progress 아래에 보면 h1이 껴있음. 기존대로 nth-child를 썼다면
+    해당코드는 h1을 nth-child(1)으로 읽어서 한 칸씩 밀리게 됨.
+    고로, nth-of-type을 사용하여 '나 .item 클래스 내에 있는 .progress-level만 고르는거야' 라는 걸 구분시켜주어야 함 */
+.skill-progress .item:nth-of-type() .progress-level {
+    animation-delay: 0s;
+}
+
+.skill-progress .item:nth-of-type(2) .progress-level {
+    animation-delay: 0.2s;
+}
+
+.skill-progress .item:nth-of-type(3) .progress-level {
+    animation-delay: 0.4s;
+}
+
+.skill-progress .item:nth-of-type(4) .progress-level {
+    animation-delay: 0.6s;
+}
+
+.skill-progress .item:nth-of-type(5) .progress-level {
+    animation-delay: 0.8s;
 }
